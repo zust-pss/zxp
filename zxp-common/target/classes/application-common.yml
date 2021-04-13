@@ -1,0 +1,20 @@
+spring:
+  # sa-token����
+  sa-token:
+    # token���� (ͬʱҲ��cookie����)
+    token-name: satoken
+    # token��Ч�ڣ���λs Ĭ��30��, -1������������
+    timeout: 2592000
+    # token��ʱ��Ч�� (ָ��ʱ�����޲�������Ϊtoken����) ��λ: ��
+    activity-timeout: -1
+    # �Ƿ�����ͬһ�˺Ų�����¼ (Ϊtrueʱ����һ���¼, Ϊfalseʱ�µ�¼�����ɵ�¼)
+    allow-concurrent-login: false
+    # �ڶ��˵�¼ͬһ�˺�ʱ���Ƿ���һ��token (Ϊtrueʱ���е�¼����һ��token, Ϊfalseʱÿ�ε�¼�½�һ��token)
+    is-share: false
+    # token���
+    token-style: uuid
+
+pic:
+  save:
+    path: D:/zxp_pic
+
