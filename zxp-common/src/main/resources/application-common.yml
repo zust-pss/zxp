@@ -1,20 +1,53 @@
 spring:
-  # sa-tokenÅäÖÃ
+  application:
+    name: zxp
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 429839007
+    url: jdbc:mysql://localhost:3306/zxp?characterEncoding=UTF-8&serverTimezone=GMT%2B8
+    druid:
+      initialSize: 5
+      minIdle: 5
+      maxActive: 20
+      # é…ç½®è·å–è¿æ¥ç­‰å¾…è¶…æ—¶çš„æ—¶é—´
+      maxWait: 60000
+      # é…ç½®é—´éš”å¤šä¹…æ‰è¿›è¡Œä¸€æ¬¡æ£€æµ‹ï¼Œæ£€æµ‹éœ€è¦å…³é—­çš„ç©ºé—²è¿æ¥ï¼Œå•ä½æ˜¯æ¯«ç§’
+      timeBetweenEvictionRunsMillis: 60000
+      # é…ç½®ä¸€ä¸ªè¿æ¥åœ¨æ± ä¸­æœ€å°ç”Ÿå­˜çš„æ—¶é—´ï¼Œå•ä½æ˜¯æ¯«ç§’
+      minEvictableIdleTimeMillis: 300000
+      validationQuery: SELECT 1 FROM DUAL
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      # æ‰“å¼€PSCacheï¼Œå¹¶ä¸”æŒ‡å®šæ¯ä¸ªè¿æ¥ä¸ŠPSCacheçš„å¤§å°
+      poolPreparedStatements: true
+      maxPoolPreparedStatementPerConnectionSize: 20
+      connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+
+
+  # sa-tokené…ç½®
   sa-token:
-    # tokenÃû³Æ (Í¬Ê±Ò²ÊÇcookieÃû³Æ)
+    # tokenåç§° (åŒæ—¶ä¹Ÿæ˜¯cookieåç§°)
     token-name: satoken
-    # tokenÓĞĞ§ÆÚ£¬µ¥Î»s Ä¬ÈÏ30Ìì, -1´ú±íÓÀ²»¹ıÆÚ
+    # tokenæœ‰æ•ˆæœŸï¼Œå•ä½s é»˜è®¤30å¤©, -1ä»£è¡¨æ°¸ä¸è¿‡æœŸ
     timeout: 2592000
-    # tokenÁÙÊ±ÓĞĞ§ÆÚ (Ö¸¶¨Ê±¼äÄÚÎŞ²Ù×÷¾ÍÊÓÎªtoken¹ıÆÚ) µ¥Î»: Ãë
+    # tokenä¸´æ—¶æœ‰æ•ˆæœŸ (æŒ‡å®šæ—¶é—´å†…æ— æ“ä½œå°±è§†ä¸ºtokenè¿‡æœŸ) å•ä½: ç§’
     activity-timeout: -1
-    # ÊÇ·ñÔÊĞíÍ¬Ò»ÕËºÅ²¢·¢µÇÂ¼ (ÎªtrueÊ±ÔÊĞíÒ»ÆğµÇÂ¼, ÎªfalseÊ±ĞÂµÇÂ¼¼·µô¾ÉµÇÂ¼)
+    # æ˜¯å¦å…è®¸åŒä¸€è´¦å·å¹¶å‘ç™»å½• (ä¸ºtrueæ—¶å…è®¸ä¸€èµ·ç™»å½•, ä¸ºfalseæ—¶æ–°ç™»å½•æŒ¤æ‰æ—§ç™»å½•)
     allow-concurrent-login: false
-    # ÔÚ¶àÈËµÇÂ¼Í¬Ò»ÕËºÅÊ±£¬ÊÇ·ñ¹²ÓÃÒ»¸ötoken (ÎªtrueÊ±ËùÓĞµÇÂ¼¹²ÓÃÒ»¸ötoken, ÎªfalseÊ±Ã¿´ÎµÇÂ¼ĞÂ½¨Ò»¸ötoken)
+    # åœ¨å¤šäººç™»å½•åŒä¸€è´¦å·æ—¶ï¼Œæ˜¯å¦å…±ç”¨ä¸€ä¸ªtoken (ä¸ºtrueæ—¶æ‰€æœ‰ç™»å½•å…±ç”¨ä¸€ä¸ªtoken, ä¸ºfalseæ—¶æ¯æ¬¡ç™»å½•æ–°å»ºä¸€ä¸ªtoken)
     is-share: false
-    # token·ç¸ñ
+    # tokené£æ ¼
     token-style: uuid
 
 pic:
   save:
     path: D:/zxp_pic
 
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**Mapper.xml
+
+md5:
+  salt: 6gfh93u8$%^/*-3FGHren034%^&*#$GBN

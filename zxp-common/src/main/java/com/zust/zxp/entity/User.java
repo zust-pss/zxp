@@ -8,6 +8,9 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Null;
+
 /**
  * <p>
  * 
@@ -26,22 +29,26 @@ public class User implements Serializable {
     /**
      * 主键
      */
+    @Null
     @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
 
     /**
      * 登录名
      */
+    @NotBlank
     private String username;
 
     /**
      * 登录密码
      */
+    @NotBlank
     private String password;
 
     /**
      * 昵称
      */
+    @NotBlank
     private String nickName;
 
     /**
@@ -57,11 +64,13 @@ public class User implements Serializable {
     /**
      * 学校
      */
+    @NotBlank
     private String school;
 
     /**
      * 地址
      */
+    @NotBlank
     private String address;
 
     /**

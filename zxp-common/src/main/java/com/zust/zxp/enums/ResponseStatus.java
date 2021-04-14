@@ -22,7 +22,13 @@ public enum ResponseStatus {
 
         PASSWORD_ERROR(1001,"密码错误！"),
 
-        NO_LOGIN(1002, "未登录或登陆失效！");
+        USERNAME_ALREADY_EXISTS(1002,"用户名已存在"),
+
+        USERNAME_NOT_EXISTS(1003,"用户不存在"),
+
+        ARGUMENT_EXCEPTION(1004,"参数异常"),
+
+        NO_LOGIN(1020, "未登录或登陆失效！");
 
 
 
