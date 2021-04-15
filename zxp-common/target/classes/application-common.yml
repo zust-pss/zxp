@@ -41,6 +41,7 @@ spring:
     is-share: false
     # token风格
     token-style: uuid
+    is-read-cookie: false
 
 pic:
   save:

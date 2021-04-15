@@ -9,7 +9,7 @@ CREATE TABLE `user` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '主键',
   `username` varchar(20) NOT NULL COMMENT '登录名',
   `password` varchar(50) NOT NULL COMMENT '登录密码',
-  `nick_name` varchar(20) DEFAULT NULL COMMENT '昵称',
+  `nick_name` varchar(20) NOT NULL COMMENT '昵称',
   `user_photo` varchar(50) DEFAULT NULL COMMENT '用户头像',
   `user_sex` tinyint(1) DEFAULT NULL COMMENT '用户性别，0：男，1：女',
   `school` varchar(20) NOT NULL COMMENT '学校',
