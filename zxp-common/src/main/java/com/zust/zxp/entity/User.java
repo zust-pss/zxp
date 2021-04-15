@@ -4,6 +4,9 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import java.time.LocalDateTime;
 import java.io.Serializable;
+
+import com.zust.zxp.valid.CreateGroup;
+import com.zust.zxp.valid.UpdateGroup;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -29,26 +32,28 @@ public class User implements Serializable {
     /**
      * 主键
      */
-    @Null
+    @Null(groups = {CreateGroup.class, UpdateGroup.class}, message = "id必须为空")
     @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
 
     /**
      * 登录名
      */
-    @NotBlank
+    @NotBlank(groups = {CreateGroup.class},message = "用户名不能为空")
+    @Null(groups = {UpdateGroup.class},message = "用户名不能修改")
     private String username;
 
     /**
      * 登录密码
      */
-    @NotBlank
+    @NotBlank(groups = {CreateGroup.class},message = "密码不能为空")
+    @Null(groups = {UpdateGroup.class},message = "密码不能修改")
     private String password;
 
     /**
      * 昵称
      */
-    @NotBlank
+    @NotBlank(groups = {CreateGroup.class},message = "昵称不能为空")
     private String nickName;
 
     /**
@@ -64,13 +69,13 @@ public class User implements Serializable {
     /**
      * 学校
      */
-    @NotBlank
+    @NotBlank(groups = {CreateGroup.class},message = "学校不能为空")
     private String school;
 
     /**
      * 地址
      */
-    @NotBlank
+    @NotBlank(groups = {CreateGroup.class},message = "地址不能为空")
     private String address;
 
     /**

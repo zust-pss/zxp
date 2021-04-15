@@ -44,7 +44,7 @@ spring:
 
 pic:
   save:
-    path: D:/zxp_pic
+    path: D:/zxp_pic/
 
 mybatis-plus:
   mapper-locations: classpath*:/mapper/**Mapper.xml

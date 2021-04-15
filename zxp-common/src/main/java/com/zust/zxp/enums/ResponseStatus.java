@@ -28,6 +28,11 @@ public enum ResponseStatus {
 
         ARGUMENT_EXCEPTION(1004,"参数异常"),
 
+        INVALID_PASSWORD(1005,"不合法的密码"),
+
+        DIFFERENT_PASSWORD(1006,"两次密码不同"),
+
+
         NO_LOGIN(1020, "未登录或登陆失效！");
 
 
