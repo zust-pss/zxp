@@ -5,7 +5,7 @@ spring:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
-    password: 429839007
+    password: 426457
     url: jdbc:mysql://localhost:3306/zxp?characterEncoding=UTF-8&serverTimezone=GMT%2B8
     druid:
       initialSize: 5
@@ -41,6 +41,7 @@ spring:
     is-share: false
     # token风格
     token-style: uuid
+    is-read-cookie: false
 
 pic:
   save:

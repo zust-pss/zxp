@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/zxp.iml" filepath="$PROJECT_DIR$/zxp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zxp-common/zxp-common.iml" filepath="$PROJECT_DIR$/zxp-common/zxp-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zxp-wx-api/zxp-wx-api.iml" filepath="$PROJECT_DIR$/zxp-wx-api/zxp-wx-api.iml" />
+    </modules>
+  </component>
+</project>

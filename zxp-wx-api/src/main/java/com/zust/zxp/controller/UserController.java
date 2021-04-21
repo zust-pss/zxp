@@ -39,6 +39,7 @@ public class UserController {
         //登陆
         userService.login(user);
 
+        // 获取当前会话的token信息参数
         SaTokenInfo tokenInfo = StpUtil.getTokenInfo();
 
         Map<String, Object> data = new HashMap<>(1);
@@ -81,4 +82,6 @@ public class UserController {
 
         return ResultBean.ok(data);
     }
+
+
 }

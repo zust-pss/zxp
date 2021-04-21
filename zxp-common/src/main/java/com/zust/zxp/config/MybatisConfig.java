@@ -10,4 +10,11 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @MapperScan("com.zust.zxp.mapper")
 public class MybatisConfig {
 
+    //mybatis-plus分页查询必须加上此配置
+    @Bean
+    public PaginationInterceptor paginationInterceptor(){
+        return new PaginationInterceptor();
+    }
+
 }
+
