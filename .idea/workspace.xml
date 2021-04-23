@@ -22,7 +22,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c0f16010-5ba4-4c63-b935-3968e954ebb1" name="Default Changelist" comment="" />
+    <list default="true" id="c0f16010-5ba4-4c63-b935-3968e954ebb1" name="Default Changelist" comment="“评论”">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -154,7 +156,16 @@
       <workItem from="1619161496948" duration="40000" />
       <workItem from="1619161725731" duration="684000" />
       <workItem from="1619167378455" duration="180000" />
+      <workItem from="1619167753883" duration="1567000" />
     </task>
+    <task id="LOCAL-00001" summary="“评论”">
+      <created>1619167881334</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1619167881334</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -171,6 +182,10 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="“评论”" />
+    <option name="LAST_COMMIT_MESSAGE" value="“评论”" />
   </component>
   <component name="WindowStateProjectService">
     <state x="586" y="198" key="#Inspections" timestamp="1618561799199">
@@ -242,10 +257,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1618280242152" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1619167901251">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1619167901251" />
     <state x="739" y="330" width="441" height="372" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog" timestamp="1618565103798">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="739" y="330" width="441" height="372" key="com.intellij.database.psi.DbRenamePsiElementProcessor.DbRenameDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1618565103798" />
+    <state x="763" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1619167857632">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="763" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1619167857632" />
     <state x="334" y="180" key="new project wizard" timestamp="1618279670738">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
