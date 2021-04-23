@@ -57,7 +57,7 @@ public class ReplyController {
 
     @PostMapping("addReply")
     public void addReplyToCom(int comId){
-
+        
     }
 
 }
