@@ -136,4 +136,7 @@
     </state>
     <state x="334" y="180" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1618279670738" />
   </component>
+  <component name="se.expertsystem.intellij.aop.aspectj.AspectJProjectComponent">
+    <setting name="isActivated" value="false" />
+  </component>
 </project>
