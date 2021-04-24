@@ -22,11 +22,6 @@
 			<version>1.16.0</version>
 		</dependency>
 
-		<dependency>
-			<groupId>javax.validation</groupId>
-			<artifactId>validation-api</artifactId>
-		</dependency>
-
 		<!--&lt;!&ndash; sa-token整合redis (使用jackson序列化方式) &ndash;&gt;
 		<dependency>
 			<groupId>cn.dev33</groupId>

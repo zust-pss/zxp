@@ -27,6 +27,8 @@ spring:
       connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
 
 
+
+
   # sa-token配置
   sa-token:
     # token名称 (同时也是cookie名称)
@@ -41,6 +43,7 @@ spring:
     is-share: false
     # token风格
     token-style: uuid
+    # 关闭cookie
     is-read-cookie: false
 
 pic:
@@ -52,3 +55,14 @@ mybatis-plus:
 
 md5:
   salt: 6gfh93u8$%^/*-3FGHren034%^&*#$GBN
+
+zxp:
+  wx:
+    app-id: wx4901b319ace4f88a
+    app-secret: 45bae4a701e7ec35bca38fdedxxxxxx
+    mch-id: 1538666666
+    mch-key: 1538xxxxxx-1538xxxxxx-1538xxxxxx
+    notify-url: https://test.dtsshop.com/demo/order/dtsNotify
+    # 商户证书文件路径
+    # 请参考“商户证书”一节 https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_api.php?chapter=4_3
+    key-path: xxxxx
