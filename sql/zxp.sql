@@ -15,9 +15,11 @@ CREATE TABLE `user` (
   `school` varchar(20) NOT NULL COMMENT '学校',
   `address` varchar(30) NOT NULL COMMENT '地址',
   `status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '用户状态，0：正常',
+  `weixin_openid` varchar(63) NOT NULL DEFAULT '' COMMENT '微信登录openid',
   `create_time` datetime NOT NULL COMMENT '创建时间',
   `update_time` datetime NOT NULL COMMENT '更新时间',
   PRIMARY KEY (`id`),
+  index (`weixin_openid`),
   UNIQUE KEY (`username`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 

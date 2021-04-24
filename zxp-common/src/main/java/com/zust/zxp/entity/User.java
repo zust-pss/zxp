@@ -93,5 +93,10 @@ public class User implements Serializable {
      */
     private LocalDateTime updateTime;
 
+    /**
+     * 微信登录openid
+     */
+    @Null(groups = {CreateGroup.class, UpdateGroup.class}, message = "Openid必须空")
+    private String weixinOpenid;
 
 }

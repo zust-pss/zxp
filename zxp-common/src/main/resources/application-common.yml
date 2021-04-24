@@ -27,6 +27,8 @@ spring:
       connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
 
 
+
+
   # sa-token配置
   sa-token:
     # token名称 (同时也是cookie名称)

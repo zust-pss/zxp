@@ -56,4 +56,11 @@ public class GlobalExceptionHandler {
         }
         return ResultBean.fail(ResponseStatus.ARGUMENT_EXCEPTION,msg);
     }
+
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResultBean IllegalArgumentExceptionHandler(IllegalArgumentException e){
+        log.error("参数异常-------------->",e);
+
+        return ResultBean.fail(ResponseStatus.ARGUMENT_EXCEPTION);
+    }
 }
