@@ -4,17 +4,11 @@ package com.zust.zxp.controller;
 import cn.dev33.satoken.annotation.SaCheckLogin;
 import cn.dev33.satoken.stp.SaTokenInfo;
 import cn.dev33.satoken.stp.StpUtil;
-import cn.hutool.core.util.StrUtil;
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.zust.zxp.Dto.PasswordDto;
 import com.zust.zxp.bean.ResultBean;
-import com.zust.zxp.bean.UserInfo;
 import com.zust.zxp.entity.User;
 import com.zust.zxp.enums.ResponseStatus;
 import com.zust.zxp.exception.BusinessException;
 import com.zust.zxp.service.UserService;
-import com.zust.zxp.valid.CreateGroup;
-import com.zust.zxp.valid.UpdateGroup;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -45,6 +39,7 @@ public class UserController {
         //登陆
         userService.login(user);
 
+        // 获取当前会话的token信息参数
         SaTokenInfo tokenInfo = StpUtil.getTokenInfo();
 
         Map<String, Object> data = new HashMap<>(1);
@@ -57,7 +52,7 @@ public class UserController {
      * 注册
      */
     @PostMapping("register")
-    public ResultBean register(@Validated(value = CreateGroup.class) @RequestBody User user) {
+    public ResultBean register(@Validated @RequestBody User user) {
 
 
         //注册
@@ -80,7 +75,7 @@ public class UserController {
     @PostMapping("getUserInfo")
     public ResultBean getUserInfo() {
         Integer id = StpUtil.getLoginIdAsInt();
-        UserInfo userInfo = userService.getUserInfo(id);
+        User userInfo = userService.getUserInfo(id);
 
         Map<String, Object> data = new HashMap<>(1);
         data.put("userInfo", userInfo);
@@ -88,45 +83,5 @@ public class UserController {
         return ResultBean.ok(data);
     }
 
-    /**
-     * 更新用户信息
-     */
-    @SaCheckLogin
-    @PostMapping("updateUserInfo")
-    public ResultBean updateUserInfo(@Validated(value = UpdateGroup.class) @RequestBody User user) {
-
-        Integer id = StpUtil.getLoginIdAsInt();
-        user.setId(id);
-        UserInfo userInfo = userService.updateUserInfo(user);
-
-        Map<String, Object> data = new HashMap<>(1);
-        data.put("userInfo", userInfo);
-
-        return ResultBean.ok(data);
-    }
-
-    /**
-     * 修改密码
-     */
-    @SaCheckLogin
-    @PostMapping("updatePassword")
-    public ResultBean updatePassword(@RequestBody PasswordDto passwordDto) {
-
-        if (!userService.updatePassword(passwordDto)) throw new BusinessException(ResponseStatus.ERROR);
-
-        return ResultBean.ok();
-    }
-
-    /**
-     * 获取历史订单
-     */
-    @SaCheckLogin
-    @PostMapping("getHistoryOrder")
-    public ResultBean getHistoryOrder() {
-
-        //待完成
-
-        return null;
-    }
 
 }

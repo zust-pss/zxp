@@ -1,6 +1,5 @@
 package com.zust.zxp.controller;
 
-import cn.dev33.satoken.annotation.SaCheckLogin;
 import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.lang.UUID;
 import cn.hutool.core.util.IdUtil;
@@ -18,14 +17,13 @@ import java.io.File;
 import java.util.Date;
 
 @RestController
-@RequestMapping("/file")
+@RequestMapping("file")
 @Slf4j
 public class FileController {
 
     @Value("${pic.save.path}")
     private String picSavePath;
 
-    @SaCheckLogin
     @PostMapping("/upload")
     ResultBean upload(@RequestParam("file") MultipartFile file) {
         Date currentDate = new Date();

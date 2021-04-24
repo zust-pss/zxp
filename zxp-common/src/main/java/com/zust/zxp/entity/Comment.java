@@ -46,5 +46,4 @@ public class Comment implements Serializable {
      */
     private String content;
 
-
 }

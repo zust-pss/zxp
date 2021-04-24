@@ -44,16 +44,6 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(value = MethodArgumentNotValidException.class)
     public ResultBean handler(MethodArgumentNotValidException e){
         log.error("实体校验异常-------------->",e);
-
-        String msg = e.getMessage();
-        System.out.println(msg);
-        if (msg != null) {
-            int lastIndex1 = msg.lastIndexOf('[');
-            if (lastIndex1 >= 0) {
-                int lastIndex2 = msg.indexOf(']',lastIndex1);
-                msg = msg.substring(lastIndex1 + 1,lastIndex2);
-            }
-        }
-        return ResultBean.fail(ResponseStatus.ARGUMENT_EXCEPTION,msg);
+        return ResultBean.fail(ResponseStatus.ARGUMENT_EXCEPTION);
     }
 }

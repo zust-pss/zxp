@@ -29,12 +29,6 @@ public class ResultBean<T> implements Serializable {
         this.msg = ResponseStatus.getMsg();
     }
 
-    private ResultBean(ResponseStatus ResponseStatus,T data) {
-        this.code = ResponseStatus.getCode();;
-        this.msg = ResponseStatus.getMsg();
-        this.data = data;
-    }
-
     private ResultBean(T data) {
         this.data = data;
     }
@@ -60,13 +54,6 @@ public class ResultBean<T> implements Serializable {
      * */
     public static ResultBean fail(ResponseStatus ResponseStatus) {
         return new ResultBean(ResponseStatus);
-    }
-
-    /**
-     * 业务处理失败,有数据返回
-     * */
-    public static <T> ResultBean fail(ResponseStatus ResponseStatus,T data) {
-        return new ResultBean(ResponseStatus,data);
     }
 
 
