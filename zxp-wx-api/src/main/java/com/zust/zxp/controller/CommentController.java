@@ -2,16 +2,15 @@ package com.zust.zxp.controller;
 
 
 import cn.dev33.satoken.stp.StpUtil;
-import cn.hutool.core.date.DateTime;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.zust.zxp.bean.ResultBean;
 import com.zust.zxp.entity.Comment;
 import com.zust.zxp.mapper.CommentMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
 
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.time.LocalDateTime;
 import java.util.HashMap;
@@ -26,7 +25,8 @@ import java.util.Map;
  * @author pss
  * @since 2021-04-13
  */
-@RestController
+//@RestController
+@Controller
 @RequestMapping("/comment")
 public class CommentController {
 
@@ -35,29 +35,32 @@ public class CommentController {
 
     private LocalDateTime time;
 
-    @PostMapping("create")
-    public ResultBean addcomment(int orderId,String content){
+    @RequestMapping("addcomment")
+    public String addcomment(int orderId, String content, RedirectAttributes model){
         //创建当前评论的时间
         time = LocalDateTime.now();
 
         //封装成一个Comment对象
         Comment comment = new Comment();
-        Integer id = StpUtil.getLoginIdAsInt();
-        comment.setUid(id);
+        Integer uid = StpUtil.getLoginIdAsInt();
+        comment.setUid(uid);
         comment.setOrderId(orderId);
         comment.setContent(content);
         comment.setTime(time);
 
-        //创建评论
         commentMapper.insert(comment);
 
-        //创建的评论按时间排序，并且只显示当前订单下的评论
+        model.addFlashAttribute("orderId",orderId);
+        return "redirect:/comment/selectAll";
+
+    }
+
+    @RequestMapping("selectAll")
+    public @ResponseBody ResultBean selectAll(@ModelAttribute("orderId") int orderId){
         QueryWrapper<Comment> queryWrapper = new QueryWrapper<>();
         queryWrapper.orderByAsc("time")
                 .eq("order_id",orderId);
 
-
-        //创建完评论立即显示所有评论
         List<Map<String, Object>> comments = commentMapper.selectMaps(queryWrapper);
         Map<String,Object> map = new HashMap<>();
         map.put("comments",comments);
